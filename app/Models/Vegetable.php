@@ -14,8 +14,8 @@ class Vegetable extends Model
         'name',
         'rating',
         'price',
-        'seller_location',
-        'size_in_grams',
+        'location',
+        'description',
         // Add more fields as needed
     ];
 }

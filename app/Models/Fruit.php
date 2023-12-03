@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Fruit extends Model
 {
     use HasFactory;
+    protected $table = 'fruits';
 
     protected $fillable = [
         'name',
         'rating',
         'price',
         'location',
-        'size'
+        'description'
 
         // Add more fields as needed
     ];

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('rating');
             $table->integer('price');
             $table->string('location');
-            $table->integer('size');
+            $table->string('description');
             // Add more fields as needed
             $table->timestamps();
         });
