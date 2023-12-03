@@ -12,7 +12,19 @@
     <title>Home</title>
 </head>
 <body>
+
     @include('header')
     @include('headerlogin')
+
+    <div>Buah</div>
+    <br>
+    <br>
+    <div>Sayuran</div>
+    <br>
+    <br>
+    <div>Paket spesial</div>
+    <br>
+    <br>
+    @include('footer')
 </body>
 </html>
