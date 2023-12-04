@@ -14,15 +14,89 @@
 <body>
 
     @include('header')
-    @include('headerlogin')
 
-    <div>Buah</div>
+
+    <div class = "text-center fs-1">NEWS</div>
+    <div class = "d-flex justify-content-center"> <img src="images/News-banner.png" alt=""></div>
+    <br> <br><br><br><br><br><br>
+    <div class = "fs-4">Buah recommended </div>
+    <div class = "d-flex ">
+        @for ($i = 1; $i <=9; $i++)
+            <div class = "ms-4"></div>
+            <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3" style="background-color: #E6F9E8">
+                {{-- ini nanti diganti sama data dari database --}}
+                <img src="images/stroberi.png" style = "width:120px; height: 100px; "alt="">
+                <div class = "mt-3 text-center fs-5">Stroberi lokal</div>
+                <div class = "mt-3 text-center text-muted" style = "opacity: 0.6;">1 pack = 500 gram</div>
+                <div class ="rating d-flex">
+                    <img class = "pt-3"src="images/rating-star.png" style="width: 25px; height: 20 px" alt="">
+                    <div class="pt-3 ms-3 fs-5">4.9/5.0</div>
+                </div>
+
+                <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp 10.000</div>
+                <div>
+                    <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">+Keranjang</button>
+                </div>
+
+
+            </div>
+        @endfor
+
+
+    </div>
+    <br>
+
+    <br>
+    <div class = "fs-4">Sayuran</div>
+
+    <div class = "d-flex ">
+        @for ($i = 1; $i <=9; $i++)
+            <div class = "ms-4"></div>
+            <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3" style="background-color: #E6F9E8">
+                {{-- ini nanti diganti sama data dari database --}}
+                <img src="images/stroberi.png" style = "width:120px; height: 100px; "alt="">
+                <div class = "mt-3 text-center fs-5">Stroberi lokal</div>
+                <div class = "mt-3 text-center text-muted" style = "opacity: 0.6;">1 pack = 500 gram</div>
+                <div class ="rating d-flex">
+                    <img class = "pt-3"src="images/rating-star.png" style="width: 25px; height: 20 px" alt="">
+                    <div class="pt-3 ms-3 fs-5">4.9/5.0</div>
+                </div>
+
+                <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp 10.000</div>
+                <div>
+                    <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">+Keranjang</button>
+                </div>
+
+
+            </div>
+        @endfor
+    </div>
     <br>
     <br>
-    <div>Sayuran</div>
-    <br>
-    <br>
-    <div>Paket spesial</div>
+    <div class = "fs-4">Paket spesial</div>
+
+    <div class = "d-flex ">
+        @for ($i = 1; $i <=9; $i++)
+            <div class = "ms-4"></div>
+            <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3" style="background-color: #E6F9E8">
+                {{-- ini nanti diganti sama data dari database --}}
+                <img src="images/stroberi.png" style = "width:120px; height: 100px; "alt="">
+                <div class = "mt-3 text-center fs-5">Stroberi lokal</div>
+                <div class = "mt-3 text-center text-muted" style = "opacity: 0.6;">1 pack = 500 gram</div>
+                <div class ="rating d-flex">
+                    <img class = "pt-3"src="images/rating-star.png" style="width: 25px; height: 20 px" alt="">
+                    <div class="pt-3 ms-3 fs-5">4.9/5.0</div>
+                </div>
+
+                <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp 10.000</div>
+                <div>
+                    <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">+Keranjang</button>
+                </div>
+
+
+            </div>
+        @endfor
+    </div>
     <br>
     <br>
     @include('footer')
