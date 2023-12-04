@@ -23,7 +23,7 @@
     <div class = "d-flex ">
         <?php for($i = 1; $i <=9; $i++): ?>
             <div class = "ms-4"></div>
-            <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3" style="background-color: #E6F9E8">
+            <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3 rounded-4" style="background-color: #E6F9E8">
                 
                 <img src="images/stroberi.png" style = "width:120px; height: 100px; "alt="">
                 <div class = "mt-3 text-center fs-5">Stroberi lokal</div>
@@ -52,7 +52,7 @@
     <div class = "d-flex ">
         <?php for($i = 1; $i <=9; $i++): ?>
             <div class = "ms-4"></div>
-            <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3" style="background-color: #E6F9E8">
+            <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3 rounded-4" style="background-color: #E6F9E8">
                 
                 <img src="images/stroberi.png" style = "width:120px; height: 100px; "alt="">
                 <div class = "mt-3 text-center fs-5">Stroberi lokal</div>
@@ -78,7 +78,7 @@
     <div class = "d-flex ">
         <?php for($i = 1; $i <=9; $i++): ?>
             <div class = "ms-4"></div>
-            <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3" style="background-color: #E6F9E8">
+            <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3 rounded-4" style="background-color: #E6F9E8">
                 
                 <img src="images/stroberi.png" style = "width:120px; height: 100px; "alt="">
                 <div class = "mt-3 text-center fs-5">Stroberi lokal</div>
