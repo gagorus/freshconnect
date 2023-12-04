@@ -16,6 +16,7 @@ class Vegetable extends Model
         'price',
         'location',
         'description',
+        'image'
         // Add more fields as needed
     ];
 }

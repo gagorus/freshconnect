@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('price');
             $table->string('location');
             $table->string('description');
+            $table->string('image');
+
             // Add more fields as needed
             $table->timestamps();
         });
