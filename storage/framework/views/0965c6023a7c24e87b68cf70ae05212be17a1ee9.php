@@ -38,6 +38,8 @@
                     <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">+Keranjang</button>
                 </div>
 
+                <div class = "mt-3 text-center">Jakarta Utara</div>
+
 
             </div>
         <?php endfor; ?>
@@ -67,6 +69,7 @@
                     <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">+Keranjang</button>
                 </div>
 
+                <div class = "mt-3 text-center">Jakarta Utara</div>
 
             </div>
         <?php endfor; ?>
@@ -93,6 +96,7 @@
                     <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">+Keranjang</button>
                 </div>
 
+                <div class = "mt-3 text-center">Jakarta Utara</div>
 
             </div>
         <?php endfor; ?>
