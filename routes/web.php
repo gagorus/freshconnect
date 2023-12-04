@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/cart', function () {
+    return view('cart');
+});
 
 Route::get('/fruits', [FruitController::class, 'index'])->name('fruits.index');
 Route::get('/vegetables', [VegetableController::class, 'index'])->name('vegetables.index');
