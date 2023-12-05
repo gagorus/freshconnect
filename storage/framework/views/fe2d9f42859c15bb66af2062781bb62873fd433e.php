@@ -42,54 +42,18 @@
           </div>
 
           <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
-            <!-- <ul class="navbar-nav mr-auto ">
-              <li class="nav-item active me-4">
-                <a class="nav-link rounded-5" href="#" style="background-color: #23C350">Login <span class="sr-only"></span></a>
-              </li>
-              <li class="nav-item me-4">
-                <a class="nav-link rounded-5" href="#" style="background-color: #E7964C">Sign Up</a>
-              </li>
-
-
-            </ul> -->
-
-            @guest
             <ul class="navbar-nav mr-auto ">
               <li class="nav-item active me-4">
-              @if (Route::has('login'))
-              <a class="nav-link rounded-5"href="{{ route('login') }}" style="background-color: #23C350">Login <span class="sr-only"></span></a>
-                            @endif
-                
+                <a class="nav-link rounded-5" href="<?php echo e(route('view_cart')); ?>" style="background-color: #23C350"><img style="width: 60px; height: 50px" src="images/cart-icon.png" alt=""><span class="sr-only"></span></a>
               </li>
               <li class="nav-item me-4">
-              @if (Route::has('register'))
-              <a class="nav-link rounded-5" href="{{ route('register') }}" style="background-color: #E7964C">Sign Up</a>
-                            @endif
-               
+                <a class="nav-link rounded-5" href="#" style="background-color: #E7964C">Log Out</a>
               </li>
 
 
             </ul>
-            @else
-            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{Auth::user()->email }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-            @endguest
         </div>
       </nav>
 </body>
 </html>
+<?php /**PATH C:\Users\Ruben\freshconnect\resources\views/headerlogin.blade.php ENDPATH**/ ?>

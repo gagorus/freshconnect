@@ -13,7 +13,7 @@
 </head>
 <body>
 
-@include('header')
+<?php echo $__env->make('header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
 
@@ -23,32 +23,32 @@
     <div class = "ms-3 fs-4">Buah recommended </div>
     <div class="border-secondary border-top p-3"></div>
     <div class = "d-flex justify-content-between">
-        @foreach ($fruits as $fruit)
+        <?php $__currentLoopData = $fruits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fruit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class = "ms-4"></div>
             <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3 rounded-4" style="background-color: #E6F9E8">
-                {{-- ini nanti diganti sama data dari database --}}
-                <img src="{{$fruit->image}}.png" style = "width:120px; height: 100px; "alt="">
-                <div class = "mt-3 text-center fs-5">{{$fruit->name}}</div>
-                <div class = "mt-3 text-center text-muted" style = "opacity: 0.6;">{{$fruit->shortdesc}}</div>
+                
+                <img src="<?php echo e($fruit->image); ?>.png" style = "width:120px; height: 100px; "alt="">
+                <div class = "mt-3 text-center fs-5"><?php echo e($fruit->name); ?></div>
+                <div class = "mt-3 text-center text-muted" style = "opacity: 0.6;"><?php echo e($fruit->shortdesc); ?></div>
                 <div class ="rating d-flex">
                     <img class = "pt-3"src="images/rating-star.png" style="width: 25px; height: 20 px" alt="">
-                    <div class="pt-3 ms-4 fs-5">{{$fruit->rating}}/5</div>
+                    <div class="pt-3 ms-4 fs-5"><?php echo e($fruit->rating); ?>/5</div>
                 </div>
 
-                <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp {{number_format($fruit->price, 0, ',', '.')}}</div>
+                <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp <?php echo e(number_format($fruit->price, 0, ',', '.')); ?></div>
                 <div>
                     <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">
 
-                        <a href="{{ route('add_cart', ['id' => $fruit->fruitid, 'category' => $fruit->category]) }}" class = " text-decoration-none text-dark">+Keranjang</a>
+                        <a href="<?php echo e(route('add_cart', ['id' => $fruit->fruitid, 'category' => $fruit->category])); ?>" class = " text-decoration-none text-dark">+Keranjang</a>
                     </button>
                 </div>
 
-                <div class = "mt-3 text-center">{{$fruit->location}}</div>
+                <div class = "mt-3 text-center"><?php echo e($fruit->location); ?></div>
 
 
             </div>
             <div class = "me-4"></div>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
     </div>
@@ -59,32 +59,32 @@
     <div class="border-secondary border-top p-3"></div>
 
     <div class = "d-flex justify-content-between">
-        @foreach ($vegetables as $vegetable)
+        <?php $__currentLoopData = $vegetables; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vegetable): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class = "ms-4"></div>
             <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3 rounded-4" style="background-color: #E6F9E8">
-                {{-- ini nanti diganti sama data dari database --}}
-                <img src="{{$vegetable->image}}.png" style = "width:120px; height: 100px; "alt="">
-                <div class = "mt-3 text-center fs-5">{{$vegetable->name}}</div>
-                <div class = "mt-3 text-center text-muted" style = "opacity: 0.6;">{{$vegetable->shortdesc}}</div>
+                
+                <img src="<?php echo e($vegetable->image); ?>.png" style = "width:120px; height: 100px; "alt="">
+                <div class = "mt-3 text-center fs-5"><?php echo e($vegetable->name); ?></div>
+                <div class = "mt-3 text-center text-muted" style = "opacity: 0.6;"><?php echo e($vegetable->shortdesc); ?></div>
                 <div class ="rating d-flex">
                     <img class = "pt-3"src="images/rating-star.png" style="width: 25px; height: 20 px" alt="">
-                    <div class="pt-3 ms-4 fs-5">{{$vegetable->rating}}/5</div>
+                    <div class="pt-3 ms-4 fs-5"><?php echo e($vegetable->rating); ?>/5</div>
                 </div>
 
-                <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp {{number_format($vegetable->price, 0, ',', '.')}}</div>
+                <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp <?php echo e(number_format($vegetable->price, 0, ',', '.')); ?></div>
                 <div>
                     <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">
-                        <a href="{{ route('add_cart', ['id' => $vegetable->vegetableid, 'category' => $vegetable->category]) }} " class = " text-decoration-none text-dark">+Keranjang</a>
+                        <a href="<?php echo e(route('add_cart', ['id' => $vegetable->vegetableid, 'category' => $vegetable->category])); ?> " class = " text-decoration-none text-dark">+Keranjang</a>
 
                     </button>
                 </div>
 
-                <div class = "mt-3 text-center">{{$vegetable->location}}</div>
+                <div class = "mt-3 text-center"><?php echo e($vegetable->location); ?></div>
 
 
             </div>
             <div class = "me-4"></div>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
     <br>
     <br>
@@ -92,10 +92,10 @@
     <div class="border-secondary border-top p-3"></div>
 
     <div class = "d-flex justify-content-between">
-        @for ($i = 1; $i <=9; $i++)
+        <?php for($i = 1; $i <=9; $i++): ?>
             <div class = "ms-4"></div>
             <div class = "item box border border-secondary shadow-sm pt-3 pb-3 ps-3 pe-3 rounded-4" style="background-color: #E6F9E8">
-                {{-- ini nanti diganti sama data dari database --}}
+                
                 <img src="images/fruits/stroberi.png" style = "width:120px; height: 100px; "alt="">
                 <div class = "mt-3 text-center fs-5">Stroberi lokal</div>
                 <div class = "mt-3 text-center text-muted" style = "opacity: 0.6;">1 pack = 500 gram</div>
@@ -114,10 +114,11 @@
                 <div class = "mt-3 text-center">Jakarta Utara</div>
 
             </div>
-        @endfor
+        <?php endfor; ?>
     </div>
     <br>
     <br>
-    @include('footer')
+    <?php echo $__env->make('footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 </html>
+<?php /**PATH C:\Users\Ruben\freshconnect\resources\views/home.blade.php ENDPATH**/ ?>

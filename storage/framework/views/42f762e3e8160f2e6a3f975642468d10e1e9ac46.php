@@ -53,43 +53,46 @@
 
             </ul> -->
 
-            @guest
+            <?php if(auth()->guard()->guest()): ?>
             <ul class="navbar-nav mr-auto ">
               <li class="nav-item active me-4">
-              @if (Route::has('login'))
-              <a class="nav-link rounded-5"href="{{ route('login') }}" style="background-color: #23C350">Login <span class="sr-only"></span></a>
-                            @endif
+              <?php if(Route::has('login')): ?>
+              <a class="nav-link rounded-5"href="<?php echo e(route('login')); ?>" style="background-color: #23C350">Login <span class="sr-only"></span></a>
+                            <?php endif; ?>
                 
               </li>
               <li class="nav-item me-4">
-              @if (Route::has('register'))
-              <a class="nav-link rounded-5" href="{{ route('register') }}" style="background-color: #E7964C">Sign Up</a>
-                            @endif
+              <?php if(Route::has('register')): ?>
+              <a class="nav-link rounded-5" href="<?php echo e(route('register')); ?>" style="background-color: #E7964C">Sign Up</a>
+                            <?php endif; ?>
                
               </li>
 
 
             </ul>
-            @else
+            <?php else: ?>
             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{Auth::user()->email }}
+                                    <?php echo e(Auth::user()->email); ?>
+
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <?php echo e(__('Logout')); ?>
+
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
+                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
+                                        <?php echo csrf_field(); ?>
                                     </form>
                                 </div>
                             </li>
-            @endguest
+            <?php endif; ?>
         </div>
       </nav>
 </body>
 </html>
+<?php /**PATH C:\Users\Ruben\freshconnect\resources\views/header.blade.php ENDPATH**/ ?>

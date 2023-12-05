@@ -29,3 +29,9 @@ Route::get('/home/{id}/{category}', [CartController::class, 'addCart'])->name('a
 
 // Route::get('/fruits', [FruitController::class, 'index'])->name('fruits.index');
 // Route::get('/vegetables', [VegetableController::class, 'index'])->name('vegetables.index');
+
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
