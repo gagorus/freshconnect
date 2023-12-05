@@ -9,7 +9,7 @@ use App\Models\Vegetable;
 use App\Models\Cart;
 class CartController extends Controller
 {
-    public function viewCart($id, $category) {
+    public function addCart($id, $category) {
 
 
         if($category == 'fruits'){
@@ -32,5 +32,24 @@ class CartController extends Controller
 
 
         // Use $variable1, $variable2, $variable3 as needed
+    }
+
+    public function viewCart(){
+        $carts = Cart::all();
+        $items = [];
+        foreach ($carts as $cart) {
+
+            if($cart->category == 'fruits'){
+                $fruits = Fruit::where('fruitid', $cart->itemid)->first();
+                $items[] = $fruits;
+
+            }
+            else if ($cart->category == 'vegetables'){
+                $vegetables = Vegetable::where('vegetableid', $cart->itemid)->first();
+                $items[] = $vegetables;
+            }
+
+        }
+        return view('cart', ['carts' => $carts, 'items' => $items]);
     }
 }

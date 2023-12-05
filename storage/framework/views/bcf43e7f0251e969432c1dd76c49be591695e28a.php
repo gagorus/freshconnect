@@ -44,7 +44,7 @@
           <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ">
               <li class="nav-item active me-4">
-                <a class="nav-link rounded-5" href="#" style="background-color: #23C350"><img style="width: 60px; height: 50px" src="images/cart-icon.png" alt=""><span class="sr-only"></span></a>
+                <a class="nav-link rounded-5" href="<?php echo e(route('view_cart')); ?>" style="background-color: #23C350"><img style="width: 60px; height: 50px" src="images/cart-icon.png" alt=""><span class="sr-only"></span></a>
               </li>
               <li class="nav-item me-4">
                 <a class="nav-link rounded-5" href="#" style="background-color: #E7964C">Log Out</a>

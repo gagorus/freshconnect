@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    @include('header')
+    @include('headerlogin')
 
 
     <div class = "text-center fs-1">NEWS</div>
