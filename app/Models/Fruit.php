@@ -15,7 +15,8 @@ class Fruit extends Model
         'rating',
         'price',
         'location',
-        'description',
+        'shortdesc',
+        'longdesc',
         'image'
 
         // Add more fields as needed

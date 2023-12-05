@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('fruits', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('rating');
+            $table->float('rating');
             $table->integer('price');
             $table->string('location');
-            $table->string('description');
+            $table->string('shortdesc');
+            $table->string('longdesc');
             $table->string('image');
 
             // Add more fields as needed

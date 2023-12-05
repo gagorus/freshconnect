@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FruitController;
-use App\Http\Controllers\VegetableController;
+use App\Http\Controllers\ItemController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,5 +23,7 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
-Route::get('/fruits', [FruitController::class, 'index'])->name('fruits.index');
-Route::get('/vegetables', [VegetableController::class, 'index'])->name('vegetables.index');
+Route::get('/home', [ItemController::class, 'viewItems']);
+
+// Route::get('/fruits', [FruitController::class, 'index'])->name('fruits.index');
+// Route::get('/vegetables', [VegetableController::class, 'index'])->name('vegetables.index');
