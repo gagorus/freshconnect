@@ -36,7 +36,10 @@
 
                 <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp {{number_format($fruit->price, 0, ',', '.')}}</div>
                 <div>
-                    <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">+Keranjang</button>
+                    <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">
+
+                        <a href="{{ route('add_cart', ['id' => $fruit->fruitid, 'category' => $fruit->category]) }}" class = " text-decoration-none text-dark">+Keranjang</a>
+                    </button>
                 </div>
 
                 <div class = "mt-3 text-center">{{$fruit->location}}</div>
@@ -69,7 +72,10 @@
 
                 <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp {{number_format($vegetable->price, 0, ',', '.')}}</div>
                 <div>
-                    <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">+Keranjang</button>
+                    <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">
+                        <a href="{{ route('add_cart', ['id' => $vegetable->vegetableid, 'category' => $vegetable->category]) }} " class = " text-decoration-none text-dark">+Keranjang</a>
+
+                    </button>
                 </div>
 
                 <div class = "mt-3 text-center">{{$vegetable->location}}</div>
@@ -99,7 +105,9 @@
 
                 <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp 10.000</div>
                 <div>
-                    <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">+Keranjang</button>
+                    <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">
+                        +Keranjang
+                    </button>
                 </div>
 
                 <div class = "mt-3 text-center">Jakarta Utara</div>

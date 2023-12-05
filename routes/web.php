@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,8 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
-Route::get('/home', [ItemController::class, 'viewItems']);
+Route::get('/home', [ItemController::class, 'viewItems'])->name('homeview');
+Route::get('/home/{id}/{category}', [CartController::class, 'viewCart'])->name('add_cart');
 
 // Route::get('/fruits', [FruitController::class, 'index'])->name('fruits.index');
 // Route::get('/vegetables', [VegetableController::class, 'index'])->name('vegetables.index');

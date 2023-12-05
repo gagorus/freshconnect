@@ -31,6 +31,7 @@ class fruitSeeder extends Seeder
                 'name' => $name[$i],
                 'rating' => $rating[$i],
                 'price' => $price[$i],
+                'category' => 'fruits',
                 'location' => $location[$i],
                 'shortdesc' => $shortdesc[$i],
                 'longdesc' => $faker->sentence(15),

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('fruitid');
             $table->string('name');
             $table->float('rating');
+            $table->string('category');
             $table->integer('price');
             $table->string('location');
             $table->string('shortdesc');
