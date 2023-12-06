@@ -10,8 +10,8 @@
     <div class = "h-50">
         <footer class = "" style = "background-color: #CCEA9C">
             <div class="text-end me-5 fs-2">Contact Us</div>
-            <div class="text-end me-5 fs-5"><img class = "me-2" src="images/phone-icon.png" style="width: 25px; height: 25px ">081273829911</div>
-            <div class="text-end mt-3 me-5 fs-5"><img src="images/insta.png" alt="" style="width: 40px; height: 25px">@Fresh.connect</div>
+            <div class="text-end me-5 fs-5"><img class = "me-2" src={{asset("images/phone-icon.png")}} style="width: 25px; height: 25px ">081273829911</div>
+            <div class="text-end mt-3 me-5 fs-5"><img src={{asset("images/insta.png")}} alt="" style="width: 40px; height: 25px">@Fresh.connect</div>
             <div class="text-center pb-3 fs-5">© 2023 Fresh Connect Inc.</div>
 
         </footer>

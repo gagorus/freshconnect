@@ -22,8 +22,8 @@ Route::get('/home', function () {
 });
 Route::get('/cart', function () {
     return view('cart');
-});
-Route::get('/cart', [CartController::class, 'viewCart'])->name('view_cart');
+})->name('view_cart');
+Route::get('/cart/{id}', [CartController::class, 'checkCart'])->name('check_cart');
 Route::get('/home', [ItemController::class, 'viewItems'])->name('homeview');
 Route::get('/home/{id}/{category}', [CartController::class, 'addCart'])->name('add_cart');
 

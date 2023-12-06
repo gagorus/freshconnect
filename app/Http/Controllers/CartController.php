@@ -34,7 +34,7 @@ class CartController extends Controller
         // Use $variable1, $variable2, $variable3 as needed
     }
 
-    public function viewCart(){
+    public function checkCart($id){
         $carts = Cart::all();
         $items = [];
         foreach ($carts as $cart) {
