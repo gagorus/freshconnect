@@ -26,6 +26,7 @@
     <br> <br><br><br><br><br><br>
     <div class = "ms-3 fs-4">Buah recommended </div>
     <div class="border-secondary border-top p-3"></div>
+    <button></button>
     <div class = "d-flex justify-content-between">
         @foreach ($fruits as $fruit)
             <div class = "ms-4"></div>
@@ -53,6 +54,7 @@
                     </button>
                 </div>
 
+                <button class="btn btn-info mt-3 ms-3 fs-5 shadow-sm" type="submit"><a href={{route('detail_check', ['id' =>$fruit->fruitid, 'category' => $fruit->category])}} class = " text-decoration-none text-dark">More info</a></button>
                 <div class = "mt-3 text-center">{{$fruit->location}}</div>
 
 
@@ -94,7 +96,7 @@
                         @endauth
                     </button>
                 </div>
-
+                <button class="btn btn-info mt-3 ms-3 fs-5 shadow-sm" type="submit"><a href={{route('detail_check', ['id' =>$vegetable->vegetableid, 'category' => $vegetable->category])}} class = " text-decoration-none text-dark">More info</a></button>
                 <div class = "mt-3 text-center">{{$vegetable->location}}</div>
 
 
