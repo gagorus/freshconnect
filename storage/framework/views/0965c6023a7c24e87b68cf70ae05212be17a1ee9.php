@@ -43,7 +43,13 @@
                 <div>
                     <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">
 
-                        <a href="<?php echo e(route('add_cart', ['id' => $fruit->fruitid, 'category' => $fruit->category])); ?>" class = " text-decoration-none text-dark">+Keranjang</a>
+                        <?php if(auth()->guard()->guest()): ?>
+                            <a href="<?php echo e(route('login')); ?> " class = " text-decoration-none text-dark">+Keranjang</a>
+                        <?php endif; ?>
+                        <?php if(auth()->guard()->check()): ?>
+                            <a href="<?php echo e(route('add_cart', ['id' => $fruit->fruitid, 'category' => $fruit->category, 'userid' => Auth::user()->id])); ?> " class = " text-decoration-none text-dark">+Keranjang</a>
+
+                        <?php endif; ?>
                     </button>
                 </div>
 
@@ -78,8 +84,14 @@
                 <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp <?php echo e(number_format($vegetable->price, 0, ',', '.')); ?></div>
                 <div>
                     <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">
-                        <a href="<?php echo e(route('add_cart', ['id' => $vegetable->vegetableid, 'category' => $vegetable->category])); ?> " class = " text-decoration-none text-dark">+Keranjang</a>
+                        <?php if(auth()->guard()->guest()): ?>
+                            <a href="<?php echo e(route('add_cart', ['id' => $vegetable->vegetableid, 'category' => $vegetable->category, 'userid' => 0])); ?> " class = " text-decoration-none text-dark">+Keranjang</a>
+                        <?php endif; ?>
 
+                        <?php if(auth()->guard()->check()): ?>
+                            <a href="<?php echo e(route('add_cart', ['id' => $vegetable->vegetableid, 'category' => $vegetable->category, 'userid' => Auth::user()->id])); ?> " class = " text-decoration-none text-dark">+Keranjang</a>
+
+                        <?php endif; ?>
                     </button>
                 </div>
 

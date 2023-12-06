@@ -43,7 +43,13 @@
                 <div>
                     <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">
 
-                        <a href="{{ route('add_cart', ['id' => $fruit->fruitid, 'category' => $fruit->category]) }}" class = " text-decoration-none text-dark">+Keranjang</a>
+                        @guest
+                            <a href="{{ route('login') }} " class = " text-decoration-none text-dark">+Keranjang</a>
+                        @endguest
+                        @auth
+                            <a href="{{ route('add_cart', ['id' => $fruit->fruitid, 'category' => $fruit->category, 'userid' => Auth::user()->id]) }} " class = " text-decoration-none text-dark">+Keranjang</a>
+
+                        @endauth
                     </button>
                 </div>
 
@@ -78,8 +84,14 @@
                 <div class = "price mt-4 text-center fs-4" style="font-weight: 900;">Rp {{number_format($vegetable->price, 0, ',', '.')}}</div>
                 <div>
                     <button class="btn btn-outline-success mt-3 ms-2 fs-5 shadow-sm" type="submit">
-                        <a href="{{ route('add_cart', ['id' => $vegetable->vegetableid, 'category' => $vegetable->category]) }} " class = " text-decoration-none text-dark">+Keranjang</a>
+                        @guest
+                            <a href="{{ route('add_cart', ['id' => $vegetable->vegetableid, 'category' => $vegetable->category, 'userid' => 0]) }} " class = " text-decoration-none text-dark">+Keranjang</a>
+                        @endguest
 
+                        @auth
+                            <a href="{{ route('add_cart', ['id' => $vegetable->vegetableid, 'category' => $vegetable->category, 'userid' => Auth::user()->id]) }} " class = " text-decoration-none text-dark">+Keranjang</a>
+
+                        @endauth
                     </button>
                 </div>
 

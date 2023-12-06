@@ -23,10 +23,11 @@ Route::get('/home', function () {
 Route::get('/cart', function () {
     return view('cart');
 })->name('view_cart');
+
 Route::get('/cart/{id}', [CartController::class, 'checkCart'])->name('check_cart');
 Route::get('/home', [ItemController::class, 'viewItems'])->name('homeview');
-Route::get('/home/{id}/{category}', [CartController::class, 'addCart'])->name('add_cart');
-
+Route::get('/home/{id}/{category}/{userid}', [CartController::class, 'addCart'])->name('add_cart');
+Route::delete('/cart/{d_id}/{userid}', [CartController::class, 'destroy'])->name('destroy_cart');
 // Route::get('/fruits', [FruitController::class, 'index'])->name('fruits.index');
 // Route::get('/vegetables', [VegetableController::class, 'index'])->name('vegetables.index');
 

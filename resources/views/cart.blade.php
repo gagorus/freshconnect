@@ -43,7 +43,13 @@
                         <span class="fas fa-plus">+</span>
                         </button>
 
-                        <button class ="ms-5 btn btn-danger">Hapus</button>
+                        <form action="{{route('destroy_cart', ['d_id' =>$carts[$i-1]->cartid, 'userid' => Auth::user()->id]) }}" method="POST">
+                            @method("DELETE")
+                            @csrf
+                            <button type = "submit" class = "btn btn-danger ms-5">Hapus</button>
+
+                        </form>
+
                     </div>
 
 

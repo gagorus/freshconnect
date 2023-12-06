@@ -9,7 +9,7 @@ use App\Models\Vegetable;
 use App\Models\Cart;
 class CartController extends Controller
 {
-    public function addCart($id, $category) {
+    public function addCart($id, $category, $userid) {
 
 
         if($category == 'fruits'){
@@ -22,7 +22,7 @@ class CartController extends Controller
         }
 
         $cart = new Cart;
-        $cart->userid = 1;
+        $cart->userid = $userid;
         $cart->itemid = $id;
         $cart->category = $category;
         $cart->quantity = 1;
@@ -35,7 +35,8 @@ class CartController extends Controller
     }
 
     public function checkCart($id){
-        $carts = Cart::all();
+
+        $carts = Cart::where('userid', $id)->get();
         $items = [];
         foreach ($carts as $cart) {
 
@@ -51,5 +52,11 @@ class CartController extends Controller
 
         }
         return view('cart', ['carts' => $carts, 'items' => $items]);
+    }
+
+    public function destroy($id, $userid){
+        $carts = Cart::where('cartid', $id)->delete();
+        return redirect()->route('check_cart', ['id' => $userid]);
+
     }
 }
