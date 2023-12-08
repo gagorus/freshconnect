@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="js/updateprice.js"></script>
+    <script src="<?php echo e(asset('js/updateprice.js')); ?>"></script>
     <title>Document</title>
 </head>
 <body>
-    <?php echo $__env->make('header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php if(auth()->guard()->guest()): ?>
+        <?php echo $__env->make('header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php else: ?>
+        <?php echo $__env->make('headerlogin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php endif; ?>
     <div class="text-center mt-3 pb-3 fs-2">Shopping Cart</div>
     <div id = "counter" hidden><?php echo e(count($carts)); ?></div>
     <?php for($i = 1; $i <= count($carts); $i++): ?>
         <div class="item border-top border-bottom border-secondary " >
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex">
-                    <img class = "ms-5"src="<?php echo e($items[$i-1]->image); ?>.png" style="width: 120px; height: 100px;" alt="">
+                    <img class = "ms-5"src="<?php echo e(asset($items[$i-1]->image)); ?>.png" style="width: 120px; height: 100px;" alt="">
                     <div class="ms-3">
                         <div id = "title" class="fs-5"><?php echo e($items[$i-1]->name); ?></div>
                         <div class="rating d-flex">
-                            <img class="pt-3" src="images/rating-star.png" style="width: 30px; height: 40px" alt="">
+                            <img class="pt-3" src="<?php echo e(asset("images/rating-star.png")); ?>" style="width: 30px; height: 40px" alt="">
                             <div class="mt-3 ms-1 fs-5"><?php echo e($items[$i-1]->rating); ?></div>
                         </div>
                         <div class="mt-3 text-center text-muted" style="opacity: 0.6;"><?php echo e($items[$i-1]->shortdesc); ?></div>
@@ -39,7 +43,13 @@
                         <span class="fas fa-plus">+</span>
                         </button>
 
-                        <button class ="ms-5 btn btn-danger">Hapus</button>
+                        <form action="<?php echo e(route('destroy_cart', ['d_id' =>$carts[$i-1]->cartid, 'userid' => Auth::user()->id])); ?>" method="POST">
+                            <?php echo method_field("DELETE"); ?>
+                            <?php echo csrf_field(); ?>
+                            <button type = "submit" class = "btn btn-danger ms-5">Hapus</button>
+
+                        </form>
+
                     </div>
 
 

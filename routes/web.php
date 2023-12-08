@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\FruitController;
+use App\Http\Controllers\VegetableController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +23,18 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/fruit', function () {
+    return view('fruit');
+});
 Route::get('/cart', function () {
     return view('cart');
 })->name('view_cart');
 
 Route::get('/cart/{id}', [CartController::class, 'checkCart'])->name('check_cart');
 Route::get('/home', [ItemController::class, 'viewItems'])->name('homeview');
+Route::get('/fruit', [FruitController::class, 'viewItems'])->name('fruitview');
+Route::get('/vegetable', [VegetableController::class, 'viewItems'])->name('vegetableview');
 
 Route::get('/home/{id}/{category}/{userid}', [CartController::class, 'addCart'])->name('add_cart');
 

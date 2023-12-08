@@ -22,13 +22,13 @@
         <div class="collapse navbar-collapse flex-row" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto ">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+              <a class="nav-link" href="/home">Home <span class="sr-only"></span></a>
             </li>
             <li class="nav-item ms-4">
-              <a class="nav-link" href="#">Buah</a>
+              <a class="nav-link" href="/fruit">Buah</a>
             </li>
             <li class="nav-item ms-4">
-                <a class="nav-link" href="#">Sayuran</a>
+                <a class="nav-link" href="/sayuran">Sayuran</a>
               </li>
 
           </ul>

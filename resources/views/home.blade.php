@@ -26,7 +26,7 @@
     <br> <br><br><br><br><br><br>
     <div class = "ms-3 fs-4">Buah recommended </div>
     <div class="border-secondary border-top p-3"></div>
-    <button></button>
+
     <div class = "d-flex justify-content-between">
         @foreach ($fruits as $fruit)
             <div class = "ms-4"></div>
