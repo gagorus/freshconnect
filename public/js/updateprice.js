@@ -64,8 +64,17 @@ function updateGrandTotal() {
     // console.log(grandTotal);
     grandTotal = grandTotal.toLocaleString('id-ID');
     document.getElementById('grandTotal').innerHTML = `<strong> Grand total: Rp ${grandTotal}</strong>`;
+    updateLinkHref(grandTotal);
 }
 
+function updateLinkHref(total) {
+    // var grandTotalContent = document.getElementById('grandTotal').textContent // Get the current total
+    var route = "/payment/{price}";
+    route = route.replace('{price}', total);
+    var r = document.getElementById('buyAll');
+    r.setAttribute('href',route)
+
+}
 
 window.onload = function () {
     let count = parseInt(document.getElementById('counter').textContent);

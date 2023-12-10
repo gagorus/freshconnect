@@ -28,7 +28,7 @@
               <a class="nav-link" href="/fruit">Buah</a>
             </li>
             <li class="nav-item ms-4">
-                <a class="nav-link" href="/sayuran">Sayuran</a>
+                <a class="nav-link" href="/vegetable">Sayuran</a>
               </li>
 
           </ul>

@@ -37,4 +37,8 @@ class ItemController extends Controller
         }
         return view('detail', ['item' => $item]);
     }
+
+    public function updatePayment($price){
+        return view('payment',['price' => $price]);
+    }
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="{{asset('css/payment.css')}}">
 
     <title>Document</title>
 </head>
@@ -31,7 +31,7 @@
 
     <div class="pym-box">
         <div class="subox-row">
-            
+
             <button class="pym-subox" onclick="">
                 <img class="pym-img" src="/images/payment-method/gopay.png">
             </button>
@@ -63,19 +63,19 @@
             <h1 class="total1">
                 Pesanan
             </h1>
-            <p style="margin-top: 10px;margin-bottom: 0px;font-weight: lighter;">Total barang:</p>
-            <p class="total2">Delivery:</p>
-            <p class="total2">Total:</p>
-            <p class="total2">Diskon:</p>
+            <p class = "d-flex"style="margin-top: 10px;margin-bottom: 0px;font-weight: lighter;">Total barang: <span class = "ms-4">Rp {{$price}}</span></p>
+            <p class="total2">Delivery: <span class = "ms-4">Rp 0</span></p>
+            <p class="total2">Total: <span class = "ms-4">Rp {{$price}}</span></p>
+            <p class="total2">Diskon: <span class = "ms-4">Rp 0</p>
             <hr style="width: 400px;">
             <h1 class="total1" style="margin-top: 10px; color: rgba(35, 195, 80, 0.95);">
-                Harga total:
+                Harga total: Rp {{$price}}
             </h1>
             <hr style="width: 400px;">
-            
+
         </div>
-        
-        <button class="nav-link rounded-5" style="background-color: gray; 
+
+        <button class="nav-link rounded-5" style="background-color: gray;
         width:180px;
         height: 70px;
         margin-left: 50px;

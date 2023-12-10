@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="{{ asset('js/updateprice.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -66,11 +67,32 @@
     <div id = "grandTotal"class = "border-top border-secondary p-5 fs-3" >Grand total: Rp 25.000</div>
 
     <div class = "text-center" >
-        <button class="btn btn-outline-success mt-3 ps-5 pe-5 mb-3 fs-4 shadow-sm"  type="submit" style="width: 700px;">Beli semua</button>
+        <button class="btn btn-outline-success mt-3 ps-5 pe-5 mb-3 fs-4 shadow-sm"  type="submit" style="max-width: 700px;">
+            <a id = "buyAll" class = "text-decoration-none text-dark p-4" href="#">Beli semua</a>
+        </button>
     </div>
 
 
+    {{-- <script>
+        $(document).ready(function() {
+            // Function to update the link's href
+            function updateLinkHref() {
+                var grandTotalContent = $('#grandTotal').text(); // Get the current total
+                var route = "{{ route('payment_up', ['price' => ':price']) }}";
+                route = route.replace(':price', grandTotalContent);
+                $('#buyAll').attr('href', route);
+            }
+
+            // Update the link's href initially
+            updateLinkHref();
+
+
+        });
+    </script> --}}
 
     @include('footer')
+
+
+
 </body>
 </html>

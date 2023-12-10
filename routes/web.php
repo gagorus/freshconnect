@@ -44,6 +44,12 @@ Route::get('/detail', function () {
     return view('detail');
 })->name('detail_view');
 
+Route::get('/payment', function () {
+    return view('payment');
+})->name('payment');
+
+Route::get('/payment/{price}', [ItemController::class, 'updatePayment'])->name('payment_up');
+
 
 Route::delete('/cart/{d_id}/{userid}', [CartController::class, 'destroy'])->name('destroy_cart');
 // Route::get('/fruits', [FruitController::class, 'index'])->name('fruits.index');

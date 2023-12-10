@@ -26,7 +26,7 @@
     <br> <br><br><br><br><br><br>
     <div class = "ms-3 fs-4">Buah recommended </div>
     <div class="border-secondary border-top p-3"></div>
-    <button></button>
+
     <div class = "d-flex justify-content-between">
         <?php $__currentLoopData = $fruits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fruit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class = "ms-4"></div>
