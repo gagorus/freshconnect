@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" >
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo e(asset('css/payment.css')); ?>">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="<?php echo e(asset('js/promoprice.js')); ?>"></script>
 
     <title>Document</title>
 </head>
@@ -66,9 +69,9 @@
             <p class = "d-flex"style="margin-top: 10px;margin-bottom: 0px;font-weight: lighter;">Total barang: <span class = "ms-4">Rp <?php echo e($price); ?></span></p>
             <p class="total2">Delivery: <span class = "ms-4">Rp 0</span></p>
             <p class="total2">Total: <span class = "ms-4">Rp <?php echo e($price); ?></span></p>
-            <p class="total2">Diskon: <span class = "ms-4">Rp 0</p>
+            <p class="total2" id = "disc">Diskon: <span class = "ms-4">Rp 0</p>
             <hr style="width: 400px;">
-            <h1 class="total1" style="margin-top: 10px; color: rgba(35, 195, 80, 0.95);">
+            <h1 id = "total" class="total1" style="margin-top: 10px; color: rgba(35, 195, 80, 0.95);">
                 Harga total: Rp <?php echo e($price); ?>
 
             </h1>
@@ -76,15 +79,20 @@
 
         </div>
 
-        <button class="nav-link rounded-5" style="background-color: gray;
+        <button class="btn nav-link rounded-5 dropdown-toggle" style="background-color: gray;
         width:180px;
         height: 70px;
         margin-left: 50px;
         border-radius: 20px;
         background-color: #E7964C;
-        display: inline;">
+        display: inline;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Gunakan promo
         </button>
+
+        <ul class="dropdown-menu">
+            <li><div class="dropdown-item" onclick="updateTotal()">FRESH15</div></li>
+        </ul>
+
         <button class="nav-link rounded-5" style="height: 70px;margin-left: 20px; width: 750px; background-color:rgba(35, 195, 80, 0.95);display: inline;">
             Beli sekarang
         </button>
