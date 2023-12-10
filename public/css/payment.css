@@ -1,0 +1,81 @@
+.alamat-text1{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+}
+
+.alamat-input{
+    width: 700px;
+    height: 70px;
+    margin-left: 100px;
+    margin-top: 30px;
+    padding-left: 15px;
+}
+
+.line1{
+    width: 1050px;
+    height: 1px;
+    margin-left: 100px;
+}
+
+.pym-box{
+    width: 1050px;
+    height: 1190px;
+    border-radius: 20px;
+    border: 2px solid #B9B9B9;
+    background: #FFF;
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.pym-subox{
+    display: inline-block;
+    width: 450px;
+    height: 140px;
+    margin-top: 50px;
+    margin-left: 50px;
+    border-radius: 20px;
+    border: 2px solid #B9B9B9;
+    background-color: white;
+    border-color: #B9B9B9;
+    transition: 20ms;
+}
+.pym-subox:hover{
+    border-color: rgba(35, 195, 80, 0.95);
+    background-color: rgba(246, 255, 249, 0.95);
+}
+.pym-subox:focus{
+    background-color: rgba(246, 255, 249, 0.95);
+    border-color: rgba(35, 195, 80, 0.95);
+    border-width: 3px;
+}
+
+.pym-img{
+    width: 200px;
+}
+
+.total{
+    margin-left: 50px;
+    height: 400px;
+}
+
+.total1{
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.total2{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-weight: lighter;
+    
+}
