@@ -8,15 +8,19 @@ use App\Models\Fruit;
 
 use App\Models\Vegetable;
 
+use App\Models\Paket;
+
 class ItemController extends Controller
 {
     public function viewItems()
     {
         $fruits = Fruit::all();
         $vegetables = Vegetable::all();
+        $pakets = Paket::all();
         return view('home', [
             'vegetables' => $vegetables,
-            'fruits' => $fruits
+            'fruits' => $fruits,
+            'pakets'=> $pakets
         ]);
 
     }
@@ -34,6 +38,10 @@ class ItemController extends Controller
         }
         else if ($category == 'vegetables'){
             $item = Vegetable::where('vegetableid', $id)->first();
+        }
+
+        else if ($category == 'paket'){
+            $item = Paket::where('paketid', $id)->first();
         }
         return view('detail', ['item' => $item]);
     }

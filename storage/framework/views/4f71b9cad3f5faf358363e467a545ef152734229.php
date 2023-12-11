@@ -66,10 +66,10 @@
             <h1 class="total1">
                 Pesanan
             </h1>
-            <p class = "d-flex"style="margin-top: 10px;margin-bottom: 0px;font-weight: lighter;">Total barang: <span class = "ms-4">Rp <?php echo e($price); ?></span></p>
-            <p class="total2">Delivery: <span class = "ms-4">Rp 0</span></p>
-            <p class="total2">Total: <span class = "ms-4">Rp <?php echo e($price); ?></span></p>
-            <p class="total2" id = "disc">Diskon: <span class = "ms-4">Rp 0</p>
+            <p class = "d-flex"style="margin-top: 10px;margin-bottom: 0px;font-weight: lighter;">Total barang: <span class = "text-right ms-4">Rp <?php echo e($price); ?></span></p>
+            <p class="total2">Delivery: <span class = "text-right ms-4">Rp 0</span></p>
+            <p class="total2">Total: <span class = "text-right ms-4">Rp <?php echo e($price); ?></span></p>
+            <p class="total2" id = "disc">Diskon: <span class = "text-right ms-4">Rp 0</span></p>
             <hr style="width: 400px;">
             <h1 id = "total" class="total1" style="margin-top: 10px; color: rgba(35, 195, 80, 0.95);">
                 Harga total: Rp <?php echo e($price); ?>

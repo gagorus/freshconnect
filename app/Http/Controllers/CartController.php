@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Fruit;
 use App\Models\Vegetable;
 use App\Models\Cart;
+use App\Models\Paket;
 class CartController extends Controller
 {
     public function addCart($id, $category, $userid) {
@@ -50,6 +51,10 @@ class CartController extends Controller
                 $items[] = $vegetables;
             }
 
+            else if ($cart->category == 'paket'){
+                $paket = Paket::where('paketid', $cart->itemid)->first();
+                $items[] = $paket;
+            }
         }
         return view('cart', ['carts' => $carts, 'items' => $items]);
     }
