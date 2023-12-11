@@ -17,7 +17,9 @@ function updateTotal() {
 
         document.getElementById('total').innerHTML = `<strong> Harga total: Rp ${display_harga}</strong>`;
         document.getElementById('disc').innerHTML = ` Diskon: Rp ${disc}`;
+        document.getElementById('promo1').innerHTML += `<strong> (Applied)</strong>`;
         applied = true
+
     }
     else{
         final = harga /(85/100);
@@ -25,6 +27,10 @@ function updateTotal() {
         disc = 0
         document.getElementById('total').innerHTML = `<strong> Harga total: Rp ${display_harga}</strong>`;
         document.getElementById('disc').innerHTML = ` Diskon: Rp ${disc}`;
+        let app = document.getElementById('promo1').textContent;
+        app = app.replace('(Applied)', '');
+
+        document.getElementById('promo1').innerHTML = `${app}`;
         applied = false
     }
 

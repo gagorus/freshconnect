@@ -56,7 +56,13 @@ class CartController extends Controller
 
     public function destroy($id, $userid){
         $carts = Cart::where('cartid', $id)->delete();
-        return redirect()->route('check_cart', ['id' => $userid]);
+        return view('thankpage');
+
+    }
+
+    public function destroyAll($id){
+        $carts = Cart::where('userid', $id)->delete();
+        return redirect()->route('thankpage');
 
     }
 }

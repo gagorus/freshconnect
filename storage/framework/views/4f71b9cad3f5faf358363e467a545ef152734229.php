@@ -90,12 +90,12 @@
         </button>
 
         <ul class="dropdown-menu">
-            <li><div class="dropdown-item" onclick="updateTotal()">FRESH15</div></li>
+            <li><div id = "promo1" class="dropdown-item" onclick="updateTotal()">FRESH15</div></li>
         </ul>
+        <a class = "text-decoration-none text-dark fs-3" href="<?php echo e(route('paynow', ['id' => Auth::user()->id])); ?>">
+            <button class="nav-link rounded-5" style="height: 70px;margin-left: 20px; width: 750px; background-color:rgba(35, 195, 80, 0.95);display: inline;"> Beli Semua </button>
+        </a>
 
-        <button class="nav-link rounded-5" style="height: 70px;margin-left: 20px; width: 750px; background-color:rgba(35, 195, 80, 0.95);display: inline;">
-            Beli sekarang
-        </button>
     </div>
 
     <?php echo $__env->make('footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

@@ -48,6 +48,12 @@ Route::get('/payment', function () {
     return view('payment');
 })->name('payment');
 
+Route::get('/thankpage', function () {
+    return view('thankpage');
+})->name('thankpage');
+
+Route::get('/paynow/{id}', [CartController::class, 'destroyAll'])->name('paynow');
+
 Route::get('/payment/{price}', [ItemController::class, 'updatePayment'])->name('payment_up');
 
 
