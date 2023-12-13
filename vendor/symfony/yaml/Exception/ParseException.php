@@ -52,7 +52,7 @@ class ParseException extends RuntimeException
     /**
      * Sets the snippet of code near the error.
      */
-    public function setSnippet(string $snippet): void
+    public function setSnippet(string $snippet)
     {
         $this->snippet = $snippet;
 
@@ -72,7 +72,7 @@ class ParseException extends RuntimeException
     /**
      * Sets the filename where the error occurred.
      */
-    public function setParsedFile(string $parsedFile): void
+    public function setParsedFile(string $parsedFile)
     {
         $this->parsedFile = $parsedFile;
 
@@ -90,19 +90,19 @@ class ParseException extends RuntimeException
     /**
      * Sets the line where the error occurred.
      */
-    public function setParsedLine(int $parsedLine): void
+    public function setParsedLine(int $parsedLine)
     {
         $this->parsedLine = $parsedLine;
 
         $this->updateRepr();
     }
 
-    private function updateRepr(): void
+    private function updateRepr()
     {
         $this->message = $this->rawMessage;
 
         $dot = false;
-        if (str_ends_with($this->message, '.')) {
+        if ('.' === substr($this->message, -1)) {
             $this->message = substr($this->message, 0, -1);
             $dot = true;
         }

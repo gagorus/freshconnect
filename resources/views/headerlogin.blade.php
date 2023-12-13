@@ -34,9 +34,13 @@
           </ul>
           <div class = "col-md-1"></div>
           <div class = "col-md-4">
-            <form class="d-flex form-inline ">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-8 my-sm-0" type="submit"><img src= {{asset("images/search-icon.png")}} style="width: 25px; height: 25px" alt=""></button>
+            <form class="d-flex form-inline " method="POST" action="{{route('search_bar')}}">
+                @csrf
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchbar">
+                <button class="btn btn-outline-success my-8 my-sm-0" type="submit"><img style="width: 25px; height: 25px"  src={{asset("images/search-icon.png")}} alt="">
+                  <!-- <a href="{{route('search_bar')}}">awdasdawd</a> -->
+
+                </button>
 
             </form>
 

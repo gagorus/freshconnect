@@ -5,6 +5,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FruitController;
 use App\Http\Controllers\VegetableController;
+use App\Http\Controllers\SearchController;
 
 
 /*
@@ -65,4 +66,6 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+Route::post('/search', [SearchController::class, 'search'])->name('search_bar');
 
