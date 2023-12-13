@@ -3,9 +3,12 @@
 @else
     @include('headerlogin')
 @endguest
+
+
+    <div class = " fs-3">Hasil pencarian untuk: {{$search_text}}</div>
+    <br><br><br><br>
     <div class = "ms-3 fs-4">Buah</div>
     <div class="border-secondary border-top p-3"></div>
-
     <div class = "d-flex justify-content-between">
         @foreach ($fruits as $fruit)
             <div class = "ms-4"></div>

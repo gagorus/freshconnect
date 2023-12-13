@@ -3,9 +3,12 @@
 <?php else: ?>
     <?php echo $__env->make('headerlogin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php endif; ?>
+
+
+    <div class = " fs-3">Hasil pencarian untuk: <?php echo e($search_text); ?></div>
+    <br><br><br><br>
     <div class = "ms-3 fs-4">Buah</div>
     <div class="border-secondary border-top p-3"></div>
-
     <div class = "d-flex justify-content-between">
         <?php $__currentLoopData = $fruits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fruit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class = "ms-4"></div>

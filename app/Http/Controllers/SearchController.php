@@ -18,8 +18,9 @@ class SearchController extends Controller
         $fruits = Fruit::where('name', 'LIKE', '%' .$search_text.'%')->get();
         $vegetables = Vegetable::where('name', 'LIKE', '%' .$search_text.'%')->get();
         $pakets = Paket::where('name', 'LIKE', '%' .$search_text.'%')->get();
+
         // dump($search_text);
 
-        return view('search', compact('fruits', 'vegetables', 'pakets'));
+        return view('search', compact('fruits', 'vegetables', 'pakets', 'search_text'));
     }
 }
