@@ -30,5 +30,13 @@
     <div class = "ms-3 fs-3 text-center">Information:</div>
     <div class = "ms-3 fs-6 text-center text-secondary">{{$item->longdesc}}</div>
 </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+@include('footer')
 </body>
 </html>

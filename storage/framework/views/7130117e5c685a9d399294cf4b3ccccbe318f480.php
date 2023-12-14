@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-
-
-
-    <title>Home</title>
-</head>
-<body>
 <?php if(auth()->guard()->guest()): ?>
     <?php echo $__env->make('header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php else: ?>
@@ -19,14 +5,10 @@
 <?php endif; ?>
 
 
-
-
-    <div class = "text-center fs-1">NEWS</div>
-    <div class = "d-flex justify-content-center"> <img src="images/News-banner.png" alt=""></div>
-    <br> <br><br><br><br><br><br>
-    <div class = "ms-3 fs-4">Buah recommended </div>
+    <div class = " fs-3">Hasil pencarian untuk: <?php echo e($search_text); ?></div>
+    <br><br><br><br>
+    <div class = "ms-3 fs-4">Buah</div>
     <div class="border-secondary border-top p-3"></div>
-
     <div class = "d-flex justify-content-between">
         <?php $__currentLoopData = $fruits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fruit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class = "ms-4"></div>
@@ -67,7 +49,7 @@
     <br>
 
     <br>
-    <div class = "ms-3 fs-4">Sayuran recommended</div>
+    <div class = "ms-3 fs-4">Sayuran</div>
     <div class="border-secondary border-top p-3"></div>
 
     <div class = "d-flex justify-content-between">
@@ -148,4 +130,4 @@
 <?php echo $__env->make('footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 </html>
-<?php /**PATH C:\Users\Ruben\freshconnect\resources\views/home.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Ruben\freshconnect\resources\views/search.blade.php ENDPATH**/ ?>

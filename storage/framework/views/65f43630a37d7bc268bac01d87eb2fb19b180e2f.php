@@ -30,6 +30,14 @@
     <div class = "ms-3 fs-3 text-center">Information:</div>
     <div class = "ms-3 fs-6 text-center text-secondary"><?php echo e($item->longdesc); ?></div>
 </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php echo $__env->make('footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 </html>
 <?php /**PATH C:\Users\Ruben\freshconnect\resources\views/detail.blade.php ENDPATH**/ ?>

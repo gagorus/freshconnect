@@ -56,4 +56,10 @@
             </div>
             <div class = "me-4"></div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-<?php /**PATH C:\Users\Ruben\freshconnect\resources\views/fruit.blade.php ENDPATH**/ ?>
+</div>
+<br>
+<br>
+<br>
+<?php echo $__env->make('footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+</body>
+</html><?php /**PATH C:\Users\Ruben\freshconnect\resources\views/fruit.blade.php ENDPATH**/ ?>

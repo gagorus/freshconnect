@@ -56,3 +56,10 @@
             </div>
             <div class = "me-4"></div>
         @endforeach
+</div>
+<br>
+<br>
+<br>
+@include('footer')
+</body>
+</html>
