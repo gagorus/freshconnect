@@ -32,6 +32,8 @@
 
     <hr class="line1">
 
+    <h1 class="alamat-text1">2. Payment method</h1>
+    
     <div class="pym-box">
         <div class="subox-row">
 
